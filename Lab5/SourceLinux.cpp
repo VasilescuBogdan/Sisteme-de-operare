@@ -24,7 +24,7 @@ int main(){
             return 2;
         }else if(idp == 0){
             int finish = 0, n, N;
-            //read the intervals
+            //read the interval
             read(p2[0], &n, sizeof(int));
             read(p2[0], &N, sizeof(int));
             //finding the prime numbers
@@ -43,7 +43,7 @@ int main(){
             write(p1[1], &finish, sizeof(int));
             return 0;
         }else{
-            //finding and sending the intervals to the child process
+            //finding and sending the interval to the child process
             int n = 1 + (i * 1000);
             int N = (i + 1) * 1000;
             write(p2[1], &n, sizeof(int));
@@ -53,7 +53,7 @@ int main(){
 
     int value;
     for(int i = 0; i < 10; i++){
-        do //read until we read 0 from the queue
+        do //reading until we read 0 from the queue
         {
             read(p1[0], &value, sizeof(int));
             if(value == 0){
@@ -64,7 +64,7 @@ int main(){
         } while (true);
     }
     
-    // wait untill all children end executing
+    // wait until all children end executing
     for(int i = 0; i < 10; i++){
         wait(NULL);
     }
