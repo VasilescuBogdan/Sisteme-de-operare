@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 int main(){
-    // implement 2 pipes
+    // create 2 pipes
     int p1[2], p2[2];
     if(pipe(p1) == -1){
         std::cout << "Error pipe!!!" << std::endl;
