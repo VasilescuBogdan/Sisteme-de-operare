@@ -16,7 +16,7 @@ int main(){
         perror ("ftruncate failed");
         return 0;
     }
-    void* virt-addr = mmap(0, pg_size, PROT_READ|PROT_WRITE, MAP_SHARED, md, 0); //caddr-t type no longer supported. Using void* instead
+    void* virt_addr = mmap(0, pg_size, PROT_READ|PROT_WRITE, MAP_SHARED, md, 0); //caddr-t type no longer supported. Using void* instead
 
     //create an unnamed semaphore
     sem_t semp;
