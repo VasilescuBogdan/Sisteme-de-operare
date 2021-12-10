@@ -16,7 +16,7 @@ int main(){
         perror ("ftruncate failed");
         return 0;
     }
-    void* virt_addr = mmap(0, pg_size, PROT_READ|PROT_WRITE, MAP_SHARED, md, 0); //caddr-t type no longer supported. Using void* instead
+    void* virt_addr = mmap(0, pg_size, PROT_READ|PROT_WRITE, MAP_SHARED, md, 0); //caddr_t type no longer supported. Using void* instead
 
     //create an unnamed semaphore
     sem_t semp;
@@ -47,7 +47,7 @@ int main(){
     //close and unmap the shared memory
     status = munmap(virt_addr, pg_size);
     status = close(md);
-    status = shm-unlink ("my_memory");
+    status = shm_unlink ("my_memory");
 
     //close the semaphore
     status = sem_close(&semp); 
